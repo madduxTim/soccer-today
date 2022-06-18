@@ -10,7 +10,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
     <h3 *ngIf="match?.referee?.name">Referee *If - {{match?.referee?.name}}</h3> <!-- safe navigation operator -->
     <h3 [hidden]="!match?.teamA.manager?.name">{{match.teamA.name}} Mgr {{ match?.teamA.manager?.name }}</h3>
     <h3 [hidden]="!match?.teamB.manager?.name">{{match.teamB.name}} Mgr {{ match?.teamB.manager?.name }}</h3>
-    <h3>League - {{match.championship.name}}
+    <h3 [class.green]="simpleCheck()">League - {{match.championship.name}}
     <button (click)="buyTicket()">Buy tickets!</button>
   `,
   styleUrls: ['./match.component.css']
@@ -23,7 +23,7 @@ export class MatchComponent implements OnInit {
   @Output() emitBuyTickets = new EventEmitter();
   
   ngOnInit(): void {
-    // console.log(this.match);
+    console.log(this.match);
   }
 
   buyTicket () {
@@ -33,6 +33,10 @@ export class MatchComponent implements OnInit {
 
 templateVarTest(match: object){
   console.log('template variable example', match);
+}
+
+simpleCheck = () => {
+  return true;
 }
 
 }
