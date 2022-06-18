@@ -4,9 +4,13 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   selector: 'match',
   template: `
     <h3>{{ match.teamA.name }} vs. {{ match.teamB.name }}</h3>
-    <h3>Date - </h3>
-    <h3>Time - </h3>
-    <h3>Stadium - </h3>
+    <h3>Date - {{match.date | date }}</h3>
+    <h3>Time - {{match.date | date: 'shortTime' }} </h3>
+    <h3>Stadium - {{match.stadium.name}} </h3>
+    <h3 *ngIf="match?.referee?.name">Referee *If - {{match?.referee?.name}}</h3> <!-- safe navigation operator -->
+    <h3 [hidden]="!match?.teamA.manager?.name">{{match.teamA.name}} Mgr {{ match?.teamA.manager?.name }}</h3>
+    <h3 [hidden]="!match?.teamB.manager?.name">{{match.teamB.name}} Mgr {{ match?.teamB.manager?.name }}</h3>
+    <h3>League - {{match.championship.name}}
     <button (click)="buyTicket()">Buy tickets!</button>
   `,
   styleUrls: ['./match.component.css']
