@@ -8,5 +8,3 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'soccer-today';  
 }
-
-console.log("init");

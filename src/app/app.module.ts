@@ -4,11 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MatchesComponent } from './matches/matches/matches.component';
+import { MatchComponent } from './match/match.component';
+import { TopNavComponent } from './top-nav/top-nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MatchesComponent
+    MatchesComponent,
+    MatchComponent,
+    TopNavComponent
   ],
   imports: [
     BrowserModule,
