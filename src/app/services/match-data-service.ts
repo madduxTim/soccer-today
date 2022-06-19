@@ -1,13 +1,22 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MatchDataService {
 
-  getmatches = () => {
-    return matches;
-  }  
+  getMatches() {
+    let subject = new Subject();
+    setTimeout(() => {
+        subject.next(matches); subject.complete();
+    }, 2000);
+    return subject;
+  }
+  
+  getMatch(id: string){
+    return matches.result.find(e=>e.id==id);
+  }
 
 }
 

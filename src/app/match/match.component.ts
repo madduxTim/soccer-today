@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 @Component({
   selector: 'match',
   template: `
-    <h3>{{ match.teamA.name }} vs. {{ match.teamB.name }}</h3>
+    <a [routerLink]="['/matches', match.id]">{{ match.teamA.name }} vs. {{ match.teamB.name }}</a>
     <h3>Date - {{match.date | date }}</h3>
     <h3>Time - {{match.date | date: 'shortTime' }} </h3>
     <h3>Stadium - {{match.stadium.name}} </h3>

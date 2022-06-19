@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { MatchDataService } from 'src/app/services/match-data-service';
 
 @Component({
@@ -17,12 +18,13 @@ import { MatchDataService } from 'src/app/services/match-data-service';
 export class MatchesComponent {
   matches:any;
 
-  constructor(private matchService: MatchDataService) { 
+  constructor(private matchService: MatchDataService, private route: ActivatedRoute) { 
   }
 
   ngOnInit(): void {
     // console.log(this.match1);
-    this.matches = this.matchService.getmatches();
+    // this.matchService.getMatches().subscribe(matches => {this.matches = matches});
+    this.matches = this.route.snapshot.data['matches'];
   }
 
   parentFnClickName(data: object){
