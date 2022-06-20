@@ -22,7 +22,7 @@ import {MatchesResolver } from './services/matches-resolver-service';
     TopNavComponent,
     MatchEditComponent,
     AboutComponent,
-    Error404pageComponent
+    Error404pageComponent,
   ],
   imports: [
     BrowserModule,

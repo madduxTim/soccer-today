@@ -12,7 +12,11 @@ const routes: Routes = [
   { path: 'matches', component: MatchesComponent, resolve: {matches: MatchesResolver} },
   { path: 'about', component: AboutComponent },
   { path: 'matches/:id', component: MatchEditComponent, canActivate: [MatchRouteActivator] },
-  { path: '', redirectTo: "matches", pathMatch: 'full' }
+  { path: '', redirectTo: "matches", pathMatch: 'full' },
+  { 
+    path: 'user',
+    loadChildren: () => import('../app/user/user.module').then(m=>m.UserModule)
+  }
 ];
 
 @NgModule({

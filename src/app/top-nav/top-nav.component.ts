@@ -16,6 +16,13 @@ import { Component, OnInit } from '@angular/core';
           <a class="nav-link" routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">About</a>
         </li>
       </ul>
+      <ul class="navbar-nav navbar-right">
+        <li class="nav-item">
+          <a class='nav-link' [routerLink]="['user/profile']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+            Login
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
